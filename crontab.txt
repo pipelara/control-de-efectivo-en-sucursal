@@ -2,4 +2,4 @@ SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 TZ=America/Santiago
 
-0 7 * * 1-5 root cd /app && /usr/local/bin/python envio_mail_control_efectivo_en_sucursal.py >> /var/log/cron.log 2>&1
+57 7 * * 1-5 root cd /app && /usr/local/bin/python envio_mail_control_efectivo_en_sucursal.py >> /var/log/cron.log 2>&1
