@@ -18,7 +18,6 @@ COPY crontab.txt /etc/cron.d/control-efectivo-cron
 
 RUN chmod +x /entrypoint.sh \
     && chmod 0644 /etc/cron.d/control-efectivo-cron \
-    && crontab /etc/cron.d/control-efectivo-cron \
     && touch /var/log/cron.log
 
 CMD ["/entrypoint.sh"]
