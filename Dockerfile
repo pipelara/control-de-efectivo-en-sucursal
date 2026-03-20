@@ -16,8 +16,10 @@ COPY envio_mail_control_efectivo_en_sucursal.py /app/
 COPY entrypoint.sh /entrypoint.sh
 COPY crontab.txt /etc/cron.d/control-efectivo-cron
 
-RUN chmod +x /entrypoint.sh \
+RUN sed -i 's/\r$//' /entrypoint.sh \
+    && sed -i 's/\r$//' /etc/cron.d/control-efectivo-cron \
+    && chmod +x /entrypoint.sh \
     && chmod 0644 /etc/cron.d/control-efectivo-cron \
     && touch /var/log/cron.log
 
-CMD ["/entrypoint.sh"]
+CMD ["/bin/sh", "/entrypoint.sh"]
