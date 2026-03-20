@@ -1,0 +1,16 @@
+services:
+  control_efectivo:
+    build: .
+    container_name: control_efectivo
+    restart: unless-stopped
+    environment:
+      TZ: America/Santiago
+      para: ${para}
+      CompanyDB: ${CompanyDB}
+      user_admin03: ${user_admin03}
+      pw_admin03: ${pw_admin03}
+      BASE_URL_SAP: ${BASE_URL_SAP}
+      mail_envio_control: ${mail_envio_control}
+      pw_control_caja_sucursal: ${pw_control_caja_sucursal}
+      sv_smtp: ${sv_smtp}
+      port_smtp: ${port_smtp}
